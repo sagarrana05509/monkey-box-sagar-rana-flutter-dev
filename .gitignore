@@ -23,5 +23,9 @@ doc/api/
 *.js.deps
 *.js.map
 
+android/.gitignore
+.metadata
+analysis_options.yaml
+.idea
 .flutter-plugins
 .flutter-plugins-dependencies
