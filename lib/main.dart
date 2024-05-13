@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:mokey_box/di.dart';
 
-void main() {
+import 'routes/app_pages.dart';
+
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await DenpendencyInjection.init();
   runApp(const MyApp());
 }
 
@@ -10,8 +16,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
+      getPages: AppPages.routes,
+      initialRoute: Routes.EXERCISE_LIST,
       theme: ThemeData(
         // This is the theme of your application.
         //
